@@ -1,0 +1,19 @@
+version: '3'
+services:
+  rabbitmq:
+    image: "rabbitmq"
+  consumer:
+    build: 
+      context: ./consumer
+      dockerfile: Dockerfile
+    restart: always
+    depends_on: 
+     - rabbitmq 
+  producer:
+    build: 
+      context: ./producer
+      dockerfile: Dockerfile
+    restart: always
+    depends_on: 
+     - rabbitmq
+
