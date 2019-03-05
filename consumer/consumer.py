@@ -4,7 +4,7 @@ import traceback, sys, time
 
 
 def callback(ch, method, properties, body):
-    print('Received:', body)
+    print('Received:', body, flush=True)
 
 time.sleep(50)
 
