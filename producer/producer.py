@@ -18,7 +18,7 @@ while True:
             num = random.randint(-1000, 1000)
             
             channel.basic_publish(exchange='', routing_key='random_queue', body=str(num))
-            print('Sent:', num)
+            print('Sent:', num, flush=True)
             
             time.sleep(random.randint(1, 10))
             
