@@ -9,7 +9,8 @@ time.sleep(30)
 
 while True:
     try:
-        connection = pika.BlockingConnection(pika.ConnectionParameters(host="rabbitmq"))
+        params = pika.ConnectionParameters('rabbitmq', 5672)
+        connection = pika.BlockingConnection(params)
         channel = connection.channel()
 
         channel.queue_declare(queue = 'random_queue')
